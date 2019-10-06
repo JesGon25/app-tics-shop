@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.container{
+    width: 80%;
+    margin: 30px auto;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cursor-pointer{
+    cursor:pointer;
+}
+
+.font-lg{
+    font-size:20px !important;
+}
+
+.btn-control,.input-lg{
+    width: 100% !important;
+}
+
+.image-avatar-seller,.image-avatar-product{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+}

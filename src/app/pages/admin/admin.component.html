@@ -1,0 +1,16 @@
+<mat-list  class="container">
+    <h3 mat-subheader>Menu - Bienvenido {{user}}</h3>
+    <h3 mat-subheader>Rol: {{rol}}</h3>
+    <mat-list-item [routerLink]="folder.router" class="cursor-pointer" *ngFor="let folder of folders">
+        <mat-icon mat-list-icon>{{folder.icon}}</mat-icon>
+        <h4 mat-line>{{folder.name}}</h4>
+        <p mat-line *ngIf="folder.total != -1"> {{folder.total}} {{folder.name}} registrad@s </p>
+        <mat-divider></mat-divider>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item (click)="logout()"  class="cursor-pointer" >
+        <mat-icon mat-list-icon>backspace</mat-icon>
+        <h4 mat-line>Salir</h4>
+    </mat-list-item>
+  
+</mat-list>

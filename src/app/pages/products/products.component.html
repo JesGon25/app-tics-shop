@@ -1,0 +1,11 @@
+<mat-list class="container">
+    <h3 mat-subheader class="font-lg">Productos: {{count}}</h3>
+    <button routerLink="/inventario/create" mat-raised-button color="primary">Agregar producto</button>
+    <mat-list-item *ngFor="let product of products">
+        <img mat-list-icon [src]="product.image_url" class="image-avatar-seller" alt="">
+        <h4 mat-line>{{product.id}}.- {{product.name}}</h4>
+        <p mat-line>Precio: ${{product.inventory.price}} - Stock: {{product.inventory.quantify}}</p>
+        <p mat-line>Fecha registro: {{product.created_at | date}}</p>
+        <mat-divider></mat-divider>
+    </mat-list-item>
+</mat-list>

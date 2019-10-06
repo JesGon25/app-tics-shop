@@ -1,0 +1,34 @@
+<div class="container">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="example-form">
+        <mat-card>
+            <mat-card-content class="center">
+                <img [src]="imagen" style="width: 100%;" alt="">
+                <input (change)="choose($event)" type="file">
+            </mat-card-content>
+        </mat-card>
+        <mat-form-field class="example-full-width">
+            <input matInput formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }"
+                placeholder="Nombre del producto" value="">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Codigo" formControlName="code"
+            [ngClass]="{ 'is-invalid': submitted && f.code.errors }" value="">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Existencia" formControlName="quantity" 
+            [ngClass]="{ 'is-invalid': submitted && f.quantity.errors }" value="">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput type="number" step="any" placeholder="Precio" formControlName="price" 
+            [ngClass]="{ 'is-invalid': submitted && f.price.errors }" value="">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Tax" formControlName="tax"
+            [ngClass]="{ 'is-invalid': submitted && f.tax.errors }" value="">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <textarea matInput placeholder="Descripción"></textarea>
+        </mat-form-field>
+        <button mat-raised-button color="primary">Agregar Producto</button>
+    </form>
+</div>

@@ -1,0 +1,19 @@
+<div class="container">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="example-form">
+        <mat-card>
+            <mat-card-content>
+                <mat-card-title>Accede con tu cuenta</mat-card-title>
+                <mat-divider></mat-divider>
+                <mat-form-field class="example-full-width top-divider" >
+                    <input matInput type="email" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+                        placeholder="Email" value="">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input matInput type="password" placeholder="password" formControlName="password"
+                    [ngClass]="{ 'is-invalid': submitted && f.password.errors }" value="">
+                </mat-form-field>
+                <button mat-raised-button color="primary">Acceder</button>
+            </mat-card-content>
+        </mat-card>
+    </form>
+</div>

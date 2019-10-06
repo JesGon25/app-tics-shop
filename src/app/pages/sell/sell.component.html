@@ -1,0 +1,15 @@
+<mat-list class="container">
+    <mat-form-field class="input-lg example-full-width">
+        <input (keydown.enter)="search($event)"   matInput placeholder="Buscar producto por codigo o nombre">
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <mat-list-item *ngFor="let product of products">
+        <img mat-list-icon [src]="product.image_url" class="image-avatar-seller" alt="">
+        <h4 mat-line>{{product.id}}.- {{product.name}}</h4>
+        <p mat-line>Precio: ${{product.price}}</p> <br>
+        <p mat-line>
+            <input (keydown.enter)="sell($event,product.price,product.stock,product.id)" type="number"  matInput placeholder="Agregar cantidad">
+        </p>
+        <mat-divider></mat-divider>
+    </mat-list-item>
+</mat-list>

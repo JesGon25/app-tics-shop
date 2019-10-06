@@ -1,0 +1,31 @@
+<mat-list class="container">
+    <h3 mat-subheader class="font-lg">Folio: #{{sale.id}}</h3>
+    <mat-card class="example-card">
+        <mat-card-header>
+            <div mat-card-avatar style="background: url({{user.avatar}})" class="example-header-image"></div>
+            <mat-card-title>{{user.username}}</mat-card-title>
+            <mat-card-subtitle>{{sale.created_at | date}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="product.image_url" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+            <mat-list>
+                <mat-divider></mat-divider>
+                <mat-list-item> Pago: {{sale.paymenth_method}} </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item> Producto: {{product.name}} </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item> Precio: ${{inventory.price}} </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item> Cantidad: {{sale.quantity}} </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item style="color:green; font-weight: bold;"> Total: ${{sale.total}} - {{sale.status}} </mat-list-item>
+            </mat-list>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button></button>
+            <button *ngIf="sale.status == 'pagado' && !isAdmin" (click)="cancel(sale.id)" class="btn-control" mat-raised-button color="warn" >Solicitar cancelación</button>
+            <button *ngIf="sale.status == 'cancelado' " class="btn-control" mat-raised-button color="warn" >Esta venta ha sido cancelada</button>
+            <button mat-raised-button color="warn" class="btn-control" *ngIf="isAdmin">Cancelar Venta</button>
+        </mat-card-actions>
+    </mat-card>
+</mat-list>
