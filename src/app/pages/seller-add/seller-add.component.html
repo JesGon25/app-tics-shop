@@ -1,0 +1,17 @@
+<div class="container">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="example-form">
+        <mat-form-field class="example-full-width">
+            <input matInput formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }"
+                placeholder="Nombre del vendedor" value="">
+        </mat-form-field>
+        <mat-form-field  class="example-full-width">
+            <input matInput type="email" placeholder="Email" formControlName="email"
+            [ngClass]="{ 'is-invalid': submitted && f.email.errors }" value="">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput type="password" placeholder="Password" formControlName="password" 
+            [ngClass]="{ 'is-invalid': submitted && f.password.errors }" value="">
+        </mat-form-field>
+        <button mat-raised-button color="primary">Agregar Vendedor</button>
+    </form>
+</div>

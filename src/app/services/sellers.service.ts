@@ -18,4 +18,17 @@ export class SellersService {
             }
         });
     }
+    public store(data:any){
+        return this.http.post(this.api.getUrlSellers(),{
+            "username":data.name,
+            "email":data.email,
+            "password":data.password,
+            "avatar":"https://image.flaticon.com/icons/svg/1029/1029023.svg",
+            "rol":"seller"
+        },{
+            headers:{
+                "Authorization":"bearer "+this.auth.getTokenApi()
+            } 
+        });
+    }
 }

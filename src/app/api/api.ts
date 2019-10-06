@@ -1,8 +1,8 @@
 export class Api{
 
     //host
-    private host:string = "https://api-shop-soa.herokuapp.com";
-    
+    //private host:string = "http://0.0.0.0:3335";
+    private host:string = "https://api-adonis-soa-shop.herokuapp.com";
     //urls api
     private urlLogin:string         = '/api/v1/auth/login';
     private urlSales:string         = "/api/v1/sales/";

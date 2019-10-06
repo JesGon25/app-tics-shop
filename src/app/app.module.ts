@@ -31,6 +31,7 @@ import { ProductsComponent } from './pages/products/products.component';
 import { SellComponent } from './pages/sell/sell.component';
 import { ProductAddComponent } from './pages/product-add/product-add.component';
 import { LoginComponent } from './pages/auth/login/login.component';
+import { SellerAddComponent } from './pages/seller-add/seller-add.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { LoginComponent } from './pages/auth/login/login.component';
     SellComponent,
     ProductAddComponent,
     LoginComponent,
+    SellerAddComponent,
   ],
   entryComponents:[],
   imports: [

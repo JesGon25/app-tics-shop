@@ -56,7 +56,7 @@ export class SalesService {
 
     cancelNotificationSale(token_firebase,token_admin,venta_id){
         let message = `El vendedor ${this.auth.getUserData().username} Require cancelar la venta`;
-        let url     = `http://localhost:4200/ventas/${venta_id}`;
+        let url     = `https://angular-crud-firebase-7c7a6.firebaseapp.com/ventas/${venta_id}`;
         console.log(url);
         let body = {
             "to":token_admin,

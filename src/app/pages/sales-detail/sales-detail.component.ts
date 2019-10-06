@@ -48,9 +48,13 @@ export class SalesDetailComponent implements OnInit {
     cancel(sale_id){
         let token_firebase = "AAAAFGWKpko:APA91bHAjWXjh-YLIuDe7S_gls2xlJfLGcCPqMpbv9WIGdsrZauO3NhSPDpNU9S9oSvBPNg_XBSEd0dZKy8LX_IxjLpi6G70OZRC48PFUEUgLeOtuUtO9R7p9i-6z99nbWj4wVgt6G-B";
         this.authService.getTokenAdmin().subscribe((res:any)=>{
-            this.saleService.cancelNotificationSale(token_firebase,res.token,sale_id).subscribe();
+            this.saleService.cancelNotificationSale(token_firebase,res.token,sale_id).subscribe((res)=>{
+                alert("1")
+            },(error)=>{
+                console.log("error:" +error);
+            });
         });
-        //;
+        
     }
 
 }

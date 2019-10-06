@@ -4,6 +4,7 @@ import { SalesComponent } from './pages/sales/sales.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { SalesDetailComponent } from './pages/sales-detail/sales-detail.component';
 import { SellersComponent } from './pages/sellers/sellers.component';
+import { SellerAddComponent } from './pages/seller-add/seller-add.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { SellComponent } from './pages/sell/sell.component';
 import { ProductAddComponent } from './pages/product-add/product-add.component';
@@ -32,6 +33,10 @@ const routes: Routes = [
     {
         path:'vendedores',
         component: SellersComponent
+    },
+    {
+        path:'vendedores/create',
+        component:SellerAddComponent
     },
     {
         path:'inventario',
